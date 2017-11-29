@@ -1,0 +1,12 @@
+<% include header.html %>
+<h1><%= article.title %></h1>
+<h5>Written by: <%= author %></h5>
+<p><%= article.body %></p>
+<hr>
+ <% if(user.id == article.author){ %>
+<p>
+    <a href="/article/edit/<%= article._id %>" class="btn btn-default">Edit</a>
+    <a href="#" data-id='<%= article._id %>' class="btn btn-danger delete-article">Delete</a>
+</p>
+<% } %>
+<% include footer.html %>
