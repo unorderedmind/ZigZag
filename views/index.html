@@ -1,0 +1,18 @@
+<% include header.html %>
+    <% if(user){ %>
+        <h1>
+            Reviews
+        </h1>
+        <ul class="list-group">
+            <% articles.forEach((article)=>{ %>
+                <a href="/article/<%= article._id %>">
+                    <li class="list-group-item">
+                        <%= article.title %>
+                    </li>
+                </a>
+                <% });  %>
+        </ul>
+        <% }else{ %>
+            <h1>Login to Play the Game</h1>
+            <% } %>
+<% include footer.html %>
